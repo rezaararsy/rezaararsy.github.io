@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        line {
+            stroke-width: 4;
+            stroke: #000;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <center>
+            <div>
+                <h1 id="judule">Chart Pertumbuhan</h1>
+            </div>
+        </center>
+        <div class="row" style="margin-top:10px; display: flex;
+        align-items: center; 
+        justify-content: center;padding: 0px 0px 0px 0px;margin-bottom: -30px;">
+            <img width="200px" src="panah2.svg"
+                style="margin-top: 70px;margin-bottom: 0px;margin-right: -100px;margin-left:80px" />
+            <div id="start"
+                style="height: 80px;width: 100px;background-color: black;border-radius: 20px;padding:20px;padding-left: 30px;">
+                <h3 id="p1" style="color: white;"></h3>
+            </div>
+            <img width="200px" src="panah1.svg" style="margin-top: 70px;margin-bottom: 0px;" />
+            <div id="destination"
+                style="height: 80px;width: 100px;background-color: black;border-radius: 20px;padding:20px">
+                <h3 id="p2" style="color: white;"></h3>
+            </div>
+            <img width="200px" src="panah4.svg" style="margin-top: 70px;margin-bottom: 0px;margin-left: -60px;" />
+            <img width="200px" src="panah2.svg"
+                style="margin-top: 70px;margin-bottom: 0px;margin-right: -100px;margin-left:-80px" />
+            <div id="destination1"
+                style="height: 80px;width: 100px;background-color: black;border-radius: 20px;padding:20px;padding-left: 35px;">
+                <h3 id="p3" style="color: white;"></h3>
+            </div>
+            <img width="200px" src="panah3.svg" style="margin-top: 70px;margin-bottom: 0px;margin-left: -20px;" />
+        </div>
+        <div class="col-md-12" style="margin-top: 0px;">
+            <!-- <canvas id="mixed-chart" width="600" height="450"></canvas> -->
+            <canvas id="ctx"></canvas>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+    <script src="https://chartjs-plugin-datalabels.netlify.app/chartjs-plugin-datalabels.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.5/chartjs-plugin-annotation.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // $(document).ready(function () {
+            //     $.getJSON("http://0197e305.ngrok.io/weekly_dashboard/dashboard/weekly_sales", function (json1) {
+            //         $.each(json1, function (key, data) {
+            //             console.log(data)
+            //         });
+            //     });
+            // });
+            //http://0197e305.ngrok.io/weekly_dashboard/dashboard/weekly_sales
+            var marketing = ["Week-2", "Week-1", "Week", "Sisa Target"];
+            var amount = [];
+            var datax = [];
+            var judul = '';
+
+            $.ajax({
+                type: 'POST',
+                url: 'http://www.json-generator.com/api/json/get/cqSWqABcpu?indent=2',
+                dataType: "json",
+                async: false,
+                data: {
+
+                },
+                success: function (data) {
+                    amount = data.data_y;
+                    datax = data.data_x;
+                    judul = data.sales_area;
+                    console.log(judul);
+                }
+
+            });
+
+
+
+
+            document.getElementById("p1").innerHTML = amount[0];
+            document.getElementById("p2").innerHTML = amount[1];
+            document.getElementById("p3").innerHTML = amount[2];
+            document.getElementById("judule").innerHTML = judul;
+
+            // populate 'annotations' array dynamically based on 'marketing'
+            var annotations = marketing.map(function (date, index) {
+                return {
+                    type: 'line',
+                    id: 'vline' + index,
+                    mode: 'vertical',
+                    scaleID: 'x-axis-0',
+                    value: date,
+                    borderColor: '#00ff001C',
+                    borderWidth: 0,
+                    label: {
+                        xAdjust: -125,
+                        fontSize: 32,
+                        enabled: true,
+                        position: "top",
+                        content: amount[index]
+                    }
+                }
+            });
+
+            var chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ["Week-2", "Week-1", "Week", "Sisa Target"],
+                    datasets: [{
+                        label: 'LINE',
+                        data: datax,
+                        // [145, 132, 142, 112],
+                        backgroundColor: 'rgba(0, 119, 290, 0.2)',
+                        borderColor: 'rgba(0, 119, 290, 0.6)'
+                    }]
+                },
+                options: {
+                    legend: { display: false },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    // annotation: {
+                    //     drawTime: 'afterDatasetsDraw',
+                    //     annotations: annotations
+                    // }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
