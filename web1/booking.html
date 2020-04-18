@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style1.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Muli:wght@600&display=swap" rel="stylesheet">
+  <title>Reservation</title>
+  <style>
+    body {
+      font-family: 'Muli', sans-serif !important;
+    }
+  </style>
+</head>
+
+<body oncontextmenu='return false;' onkeydown='return false;' onmousedown='return false;' ondragstart='return false'
+  onselectstart='return false' style='-moz-user-select: none; cursor: default;'>
+  <header>
+    <a href=""><img src="image/XX.png" width="50px" style="margin-top: 10px;"></a>
+    <h3>Yummy Resto</h3>
+    <p>Let's Eat here!</p>
+  </header>
+  <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: black;">
+    <!-- <div class="" style="background-color: black;"> -->
+    <!-- <a href=""><img src="image/XX.png" width="50px" style="margin-right: 10px;"></a> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03"
+      aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample03">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a style="color: white;" href="home.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+        <li><a style="color: white;" href="menu.html">Menu</a></li>
+        </li>
+        <li class="nav-item">
+        <li><a style="color: white;" href="About.html">About</a></li>
+        </li>
+        <li class="nav-item">
+        <li><a style="color: white;" href="booking.html">Reservation</a></li>
+        </li>
+        <li class="nav-item dropdown">
+          <a style="color: white;" class="dropdown-toggle" href="http://example.com" id="dropdown03"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a>
+          <div class="dropdown-menu " aria-labelledby="dropdown03">
+            <a class="dropdown-item" href="Biodata.html">Company</a>
+            <a class="dropdown-item" href="owner.html">Owner</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-md-0">
+        <ul class="navbar-nav mr-auto">
+          <li style="float:right;"><a class="active" href="login.html" style="color: white;">Login</a>
+          </li>
+        </ul>
+      </form>
+    </div>
+    <!-- </div> -->
+  </nav>
+  <!-- header  !-->
+  <div class='header'>
+    <img src="image/RESERVATION.jpg" class="img-fluid" alt="Responsive image">
+    <!-- <img src='image/RESERVATION.jpg' width="100%" height="520" /> -->
+  </div>
+
+
+
+  <center>
+    <div class="col-sm-12 col-md-12 col-lg-12" style="margin-top: 20px;">
+      <h2>~Reservation Form~</h2>
+      <p>We willing to help you make the reservation online to save your time and money or you can call us directly
+        through the customer service hotline :<font color="Red"> 225-88888</font>
+      </p>
+    </div>
+  </center>
+
+
+  <div class="container">
+    <form action="/action_page.php">
+      <div class="row">
+        <div class="col-sm-2 col-md-2 col-lg-2">
+          <label for="fname">First Name</label>
+        </div>
+        <div class="col-sm-10 col-md-10 col-lg-10">
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2 col-md-2 col-lg-2">
+          <label for="lname">Last Name</label>
+        </div>
+        <div class="col-sm-10 col-md-10 col-lg-10">
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2 col-md-2 col-lg-2">
+          <label for="country">Person</label>
+        </div>
+        <div class="col-sm-10 col-md-10 col-lg-10">
+          <select id="country" name="country">
+            <option value="australia">1 person</option>
+            <option value="canada">2 person</option>
+            <option value="canada">3 person</option>
+            <option value="canada">4 person</option>
+            <option value="canada">5 person</option>
+            <option value="canada">6 person</option>
+            <option value="canada">7 person</option>
+            <option value="canada">8 person</option>
+            <option value="canada">9 person</option>
+            <option value="canada">10 person</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2 col-md-2 col-lg-2">
+          <label for="subject">Coment</label>
+        </div>
+        <div class="col-sm-10 col-md-10 col-lg-10">
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2 col-md-2 col-lg-2">
+
+        </div>
+        <div class="col-sm-10 col-md-10 col-lg-10">
+          <input type="submit" value="Submit" style="float: left;">
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- Footer. -->
+  <!-- penutup bagian form login -->
+  <!-- Footer. -->
+  <footer class="container-fluid bg-4 footer-distributed">
+    <div class="container-fluid" style="background-color: black;padding-left: 30px;padding-right: 30px;">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-lg-4" id="footernya">
+          <img src="image/XX.png" style="width: 30%;">
+          <h3>About<span>Yummy Resto</span></h3>
+
+          <p class="footer-links">
+            <a href="home.html">Home</a>
+            |
+            <a href="menu.html">Menu</a>
+            |
+            <a href="booking.html">Reservation</a>
+            |
+            <a href="Biodata.html">Contact</a>
+          </p>
+
+          <p class="footer-company-name">© Copy Right 2020 . Ltd.</p>
+        </div>
+
+        <div class="footer-center col-xs-12 col-sm-12 col-lg-4" id="footernya">
+          <div class="row" id="centernya">
+            <div class="col-xs-12 col-sm-12 col-lg-2">
+              <i class="fa fa-map-marker"></i>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-lg-10">
+              <p><span>180 - Jl.Telekomunikasi,
+                  DayeuhKolot. No. A - 1,</span>
+                Bandung, Jawa Barat- 400710</p>
+            </div>
+          </div>
+          <div class="row" id="centernya">
+            <div class="col-xs-12 col-sm-12 col-lg-2">
+              <i class="fa fa-phone"></i>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-lg-10">
+              <p>+62 811-999-22</p>
+            </div>
+          </div>
+          <div class="row" id="centernya">
+            <div class="col-xs-12 col-sm-12 col-lg-2">
+              <i class="fa fa-envelope"></i>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-lg-10">
+              <p><a href="Yummy.com">yum@gmail.com</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-lg-4 " id="footernya">
+          <p class="footer-company-about">
+            <span>About the company</span>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- <footer class="footer-distributed">
+
+        <div class="footer-left">
+               <img src="image/XX.png">
+               <h3>About<span>Yummy Resto</span></h3>
+
+               <p class="footer-links">
+                      <a href="home.html">Home</a>
+                      |
+                      <a href="menu.html">Menu</a>
+                      |
+                      <a href="booking.html">Reservation</a>
+                      |
+                      <a href="Biodata.html">Contact</a>
+               </p>
+
+               <p class="footer-company-name">© Copy Right 2020 . Ltd.</p>
+        </div>
+
+        <div class="footer-center">
+               <div>
+                      <i class="fa fa-map-marker"></i>
+                      <p><span>180 - Jl.Telekomunikasi,
+                                    DayeuhKolot. No. A - 1,</span>
+                             Bandung, Jawa Barat- 400710</p>
+               </div>
+
+               <div>
+                      <i class="fa fa-phone"></i>
+                      <p>+62 811-999-22</p>
+               </div>
+               <div>
+                      <i class="fa fa-envelope"></i>
+                      <p><a href="Yummy.com">yum@gmail.com</a></p>
+               </div>
+        </div>
+        <div class="footer-right">
+               <p class="footer-company-about">
+                      <span>About the company</span>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        </div>
+ </footer> -->
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

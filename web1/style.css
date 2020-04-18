@@ -1,0 +1,65 @@
+
+div.form {
+	padding: 20px;
+	box-shadow: 0px 0px 10px;
+}
+
+table tr,td {
+	padding: 5px;
+}
+
+table td {
+	color: white;
+}
+
+div.bgform {
+	background-color: #3d3d3d;
+	width: 20%;
+	padding: 160px;
+	margin: auto;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px #a2512f;
+}
+
+input.login {
+	background: #f9f9f9;
+	border: none;
+	padding: 10px;
+	border-radius: 5px;
+	width: 200px;
+}
+
+input.login-button {
+	background: #f7611e;
+	border: none;
+	padding: 8px;
+	border-radius: 5px;
+	width: 219px;
+	font-size: 14pt;
+	color: white;
+}
+
+input.login-button:hover {
+	background: #e64901;
+	cursor: pointer;
+}
+
+a.forgot {
+	text-decoration: none;
+	color: white;
+}
+
+a.forgot:hover {
+	color: #e02f22;
+}
+
+p.forget {
+	margin-right: 50px;
+
+	font-size: 10pt;
+	color: white;
+}
+
+div.form {
+	background-color: #d1ccc0;
+}
