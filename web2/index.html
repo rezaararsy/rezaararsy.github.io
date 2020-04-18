@@ -20,7 +20,7 @@
 </head>
 
 <body oncontextmenu='return false;' onkeydown='return false;' onmousedown='return false;' ondragstart='return false'
-    onselectstart='return false' style='-moz-user-select: none; cursor: default;>
+    onselectstart='return false' style='-moz-user-select: none; cursor: default;'>
 
 
     <div class="container">
@@ -94,18 +94,79 @@
             var judul = '';
 
             $.ajax({
-                type: ' POST', url: 'https://www.json-generator.com/api/json/get/cqSWqABcpu?indent=2' ,
-    dataType: "json" , async: false, data: { }, success: function (data) { amount=data.data_y; datax=data.data_x;
-    judul=data.sales_area; console.log(judul); } }); document.getElementById("p1").innerHTML=amount[0];
-    document.getElementById("p2").innerHTML=amount[1]; document.getElementById("p3").innerHTML=amount[2];
-    document.getElementById("judule").innerHTML=judul; // populate 'annotations' array dynamically based on 'marketing'
-    var annotations=marketing.map(function (date, index) { return { type: 'line' , id: 'vline' + index, mode: 'vertical'
-    , scaleID: 'x-axis-0' , value: date, borderColor: '#00ff001C' , borderWidth: 0, label: { xAdjust: -125, fontSize:
-    32, enabled: true, position: "top" , content: amount[index] } } }); var chart=new Chart(ctx, { type: 'bar' , data: {
-    labels: ["Week-2", "Week-1" , "Week" , "Sisa Target" ], datasets: [{ label: 'LINE' , data: datax, // [145, 132, 142,
-    112], backgroundColor: 'rgba(0, 119, 290, 0.2)' , borderColor: 'rgba(0, 119, 290, 0.6)' }] }, options: { legend: {
-    display: false }, scales: { yAxes: [{ ticks: { beginAtZero: true } }] }, // annotation: { //
-    drawTime: 'afterDatasetsDraw' , // annotations: annotations // } } }); }); </script>
+                type: 'POST',
+                url: 'https://www.json-generator.com/api/json/get/cqSWqABcpu?indent=2',
+                dataType: "json",
+                async: false,
+                data: {
+
+                },
+                success: function (data) {
+                    amount = data.data_y;
+                    datax = data.data_x;
+                    judul = data.sales_area;
+                    console.log(judul);
+                }
+
+            });
+
+
+
+
+            document.getElementById("p1").innerHTML = amount[0];
+            document.getElementById("p2").innerHTML = amount[1];
+            document.getElementById("p3").innerHTML = amount[2];
+            document.getElementById("judule").innerHTML = judul;
+
+            // populate 'annotations' array dynamically based on 'marketing'
+            var annotations = marketing.map(function (date, index) {
+                return {
+                    type: 'line',
+                    id: 'vline' + index,
+                    mode: 'vertical',
+                    scaleID: 'x-axis-0',
+                    value: date,
+                    borderColor: '#00ff001C',
+                    borderWidth: 0,
+                    label: {
+                        xAdjust: -125,
+                        fontSize: 32,
+                        enabled: true,
+                        position: "top",
+                        content: amount[index]
+                    }
+                }
+            });
+
+            var chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ["Week-2", "Week-1", "Week", "Sisa Target"],
+                    datasets: [{
+                        label: 'LINE',
+                        data: datax,
+                        // [145, 132, 142, 112],
+                        backgroundColor: 'rgba(0, 119, 290, 0.2)',
+                        borderColor: 'rgba(0, 119, 290, 0.6)'
+                    }]
+                },
+                options: {
+                    legend: { display: false },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    // annotation: {
+                    //     drawTime: 'afterDatasetsDraw',
+                    //     annotations: annotations
+                    // }
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
